@@ -10,10 +10,11 @@ import java.util.stream.Stream;
 public class Hw9Application {
     public static void main(String[] args) {
         String[] strings = {"i", "was", "@", "aut", "90", "", ""};
-        part1(strings);
-        part2(strings);
-        System.out.println(averageByLambda(2, 5));
-        System.out.println(stringTester("l"));
+        //part1(strings);
+        //part2(strings);
+        //System.out.println(averageByLambda(2, 5));
+        //System.out.println(stringTester("l"));
+        part5();
     }
 
     private static void part1(String[] strings) {
@@ -63,5 +64,10 @@ public class Hw9Application {
                         (str.isEmpty() || str.charAt(0) == str.charAt(str.length() - 1));
 
         return tester.test(string);
+    }
+
+    private static void part5() {
+        System.out.println("3");
+        System.out.println("5");
     }
 }
