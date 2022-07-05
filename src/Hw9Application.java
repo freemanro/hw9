@@ -2,6 +2,7 @@ import org.javatuples.Pair;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,6 +11,7 @@ public class Hw9Application {
         String[] strings = {"i", "was", "@", "aut", "90", "", ""};
         part1(strings);
         part2(strings);
+        System.out.println(averageByLambda(2, 5));
     }
 
     private static void part1(String[] strings) {
@@ -45,5 +47,11 @@ public class Hw9Application {
                                         v.getValue0()
                         )
         );
+    }
+
+    private static double averageByLambda(double a, double b) {
+        BiFunction<Double, Double, Double> average = (a1, a2) -> (a1 + a2) / 2;
+
+        return average.apply(a, b);
     }
 }
