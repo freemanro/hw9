@@ -3,6 +3,7 @@ import org.javatuples.Pair;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,6 +13,7 @@ public class Hw9Application {
         part1(strings);
         part2(strings);
         System.out.println(averageByLambda(2, 5));
+        System.out.println(stringTester("l"));
     }
 
     private static void part1(String[] strings) {
@@ -53,5 +55,13 @@ public class Hw9Application {
         BiFunction<Double, Double, Double> average = (a1, a2) -> (a1 + a2) / 2;
 
         return average.apply(a, b);
+    }
+
+    private static boolean stringTester(String string) {
+        Predicate<String> tester = str ->
+                str != null &&
+                        (str.isEmpty() || str.charAt(0) == str.charAt(str.length() - 1));
+
+        return tester.test(string);
     }
 }
